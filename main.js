@@ -6,22 +6,37 @@ let fill = 0xBC8F8F;
 
 document.body.appendChild(app.view);
 
-function yellow() {
-    graphics.clear();
-    fill = 0xFFFF00;
-}
-function blue() {
-    graphics.clear();
-    fill = 0x4169E1;
-}
-function purple() {
-    graphics.clear();
-    fill = 0x9400D3;
-}
-function green() {
-    graphics.clear();
-    fill = 0x008000;
-}
+let buttons = document.querySelectorAll('button');
+
+
+    for (let i in buttons) {
+        let id = buttons[i].id;
+        buttons[i].onclick = function() {
+            console.log(id, 'this');
+            switch(id) {
+                case 'yellow':
+                    // graphics.lineStyle(1, 0xFFFF00, 1)
+                    // graphics.beginFill(0xFFFF00)
+                    graphics.dirty++;
+                    fill = 0xFFFF00;
+                    console.log(fill, 'yellow');
+                    break;
+                case 'blue':
+                    fill = 0x4169E1;
+                    console.log(blue, 'blue');
+                    break;
+                case 'purple':
+                    fill = 0x9400D3;
+                    console.log(blue, 'blue');
+                    break;
+                case 'green':
+                    fill = 0x008000;
+                    console.log(blue, 'blue');
+                    break;
+            }
+        }
+    }
+
 
 app.renderer.plugins.interaction.cursorStyles.default = defaultIcon;
 // app.renderer.plugins.interaction.cursorStyles.hover = hoverIcon;
@@ -34,13 +49,19 @@ background.interactive = true;
 background.buttonMode = false;
 
 
-background.on('mousemove', function(evt) {
-    graphics.beginFill(fill);
-    graphics.drawRect(evt.data.global.x, evt.data.global.y, 32, 32);
-    graphics.endFill();
-    // graphics.interactive = true;
-    // console.log('pointermove',evt.data.global.x, evt.data.global.y);
-});
+   
+    background.on('mousemove', function(evt) {
+    
+        console.log('asd');
+        // graphics.clear();
+        graphics.beginFill(fill);
+        graphics.drawRect(evt.data.global.x, evt.data.global.y, 32, 32);
+        graphics.endFill();
+        // graphics.interactive = true;
+        // console.log('pointermove',evt.data.global.x, evt.data.global.y);
+    });
+
+
 background.on('pointerdown', function(evt) {
     // console.log('down');
 });
