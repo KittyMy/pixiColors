@@ -1,0 +1,6 @@
+body {
+    background-color: wheat;
+}
+canvas {
+    cursor: url("img/cursor.png"), none!important;
+}
