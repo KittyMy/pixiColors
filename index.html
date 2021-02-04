@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixi :)</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
-    <button id="yellow">Желтый</button>
-    <button id="blue">Синий</button>
-    <button id="purple">Фиолетовый</button>
-    <button id="green">Зеленый</button>
-    
+    <div class="myBtn" style="margin: 20px 0;">
+        <div class="myBtn__color">
+            <button id="default">Стандартный</button>
+            <button id="yellow">Желтый</button>
+            <button id="blue">Синий</button>
+            <button id="purple">Фиолетовый</button>
+            <button id="green">Зеленый</button>
+            <button id="clear">Очистить холст</button>
+        </div>
+       <div class="myBtn__scale" style="margin-top: 10px;">
+           <button id="scale_plus">+</button>
+           <button id="scale_minus">-</button>
+       </div>
+    </div>
+   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://d157l7jdn8e5sf.cloudfront.net/dev/pixi-legacy.js"></script>
+    <script src="pixi.min.js"></script>
     <script src="main.js"></script>
-
 </body>
 </html>
